@@ -1,1 +1,97 @@
+@import "background";
+@import "pop-up";
+@import "mixins";
+@import "fonts";
+@import "loader";
 
+main {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  .actions {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    .modal-button {
+      @include button;
+      margin-right: 15px;
+      width: 160px;
+    }
+    .check-button {
+      @include button;
+      width: 160px;
+    }
+  }
+
+  .form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 40%;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: #eee;
+      font-family: sans-serif;
+      font-size: 27px;
+      font-weight: 600;
+
+      h1 {
+        margin: 0;
+      }
+    }
+  }
+
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .input-container {
+    @include input;
+  }
+
+  .submit {
+    @include button;
+    width: 100%;
+    margin-top: 38px;
+    .loader {
+      display: none;
+    }
+    &.load {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .loader {
+        display: block;
+      }
+      .text {
+        display: none;
+      }
+    }
+  }
+}

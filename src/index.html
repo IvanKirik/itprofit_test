@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>itprofit</title>
@@ -7,7 +7,67 @@
 </head>
 <body>
 
+<div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+<main>
+    <div class="actions">
+        <button id="modal-button" class="modal-button">Модальное окно</button>
+        <button id="check-button" class="check-button">
+            <span class="text">Проверить сервер</span>
+            <span class="loader"></span>
+        </button>
+    </div>
 
+    <div class="form">
+        <div class="title">
+            <img src="logo.png" alt="logo">
+            <h1>Itprofit</h1>
+        </div>
 
+        <div class="input-container ic1">
+            <input id="name" class="input" type="text" name="name" placeholder=" " />
+            <div class="cut"></div>
+            <label for="name" class="placeholder">Имя</label>
+            <div class="error">Поле обязательно для заполнения!</div>
+        </div>
+        <div class="input-container ic2">
+            <input id="email" class="input" type="email" name="email" placeholder=" " />
+            <div class="cut"></div>
+            <label for="email" class="placeholder">E-mail</label>
+            <div class="error">Поле обязательно для заполнения!</div>
+        </div>
+        <div class="input-container ic2">
+            <input id="phone" class="input" type="text" name="phone" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="phone" class="placeholder">Телефон</label>
+            <div class="error">Поле обязательно для заполнения!</div>
+        </div>
+        <div class="input-container ic2">
+            <textarea id="message" class="input" name="message" rows="5" placeholder=" "></textarea>
+            <div class="cut cut-short"></div>
+            <label for="message" class="placeholder">Сообщение</label>
+            <div class="error">Поле обязательно для заполнения!</div>
+        </div>
+        <button class="submit" id="submit" disabled>
+            <span class="text">Оправить</span>
+            <span class="loader"></span>
+        </button>
+    </div>
+
+    <div class="pop-up" id="pop-up">
+        <div class="pop-up-body">
+            <div class="pop-up-content">
+                <h1 class="title-popup">Статус</h1>
+                <p class="text-popup">Сообщение</p>
+                <div class="pop-up-action">
+                    <button class="pop-up-close" id="pop-up-button-close">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>

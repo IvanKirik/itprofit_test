@@ -1,0 +1,155 @@
+@import "fonts";
+
+@mixin button {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  text-align: center;
+
+  &:active {
+    background-color: #06b;
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    background-color: rgba(0, 102, 187, 0.62);
+    &:hover {
+      background-color: rgba(0, 102, 187, 0.62);
+    }
+    &:active {
+      background-color: rgba(0, 102, 187, 0.62);
+      transform: translateY(0);
+    }
+  }
+
+  &:hover {
+    background-color: #003bbb;
+  }
+
+  .loader {
+    display: none;
+  }
+
+  &.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loader {
+      display: block;
+    }
+    .text {
+      display: none;
+    }
+  }
+}
+
+@mixin input {
+  height: 50px;
+  position: relative;
+  width: 100%;
+
+  &.no-valid {
+    input {
+      border: 1px solid red;
+    }
+    textarea {
+      border: 1px solid red;
+    }
+    .error {
+      display: block;
+    }
+  }
+
+  &.error-server {
+    input {
+      border: 1px solid red;
+    }
+    textarea {
+      border: 1px solid red;
+    }
+    .error {
+      display: block;
+    }
+  }
+
+  .error {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: #dc2f55;
+    font-size: 10px;
+  }
+
+  &.ic1 {
+    margin-top: 40px;
+  }
+
+  &.ic2 {
+    margin-top: 40px;
+  }
+
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+
+  }
+
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 80px;
+  }
+
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+}

@@ -81,11 +81,21 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|webp|gif|jpg)$/,
-                use: ['file-loader']
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]'
+                    }
+                }
             },
             {
-                test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
+                test: /\.(ttf|woff|woff2|eot|otf)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]'
+                    }
+                }
             },
             {
                 test: /\.m?js$/,
