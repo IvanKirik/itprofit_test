@@ -1,5 +1,5 @@
-import './styles/style.scss';
-
+import "./styles/style.scss";
+import Logo from "@/assets/images/logo.png";
 import {popUp} from "@/scripts/pop-up";
 import {Http} from "@/scripts/http";
 import {config} from "@/scripts/config";
